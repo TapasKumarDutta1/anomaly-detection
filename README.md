@@ -1,4 +1,6 @@
-## ARM-Net
-This repository is for the Tensorflow implementation of our paper "ARM-Net: Attention-guided Residual Multiscale CNN for Effective Brain Tumor Classification using MR Images
-".
+## Anomaly Detection
+Clone the repository and unzip all files in the same directory
+Task 1: Segmentation of templates from images
+Steps:
+  1. Upload the
 
