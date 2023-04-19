@@ -11,16 +11,16 @@ Clone the repository and unzip all files in the same directory
 
   1. Install pytorch_lightning==1.9.4
   2. Run Task2.py and specify the path to Ok images in dataset_path and path to store logs in project_path
-  Samples with anomaly map:
+  Samples with anomaly map: https://drive.google.com/drive/folders/1FkrorrVT8h_XQwq50Qr21TcmuBDabdXB?usp=sharing
 
 
 ## Task 2: Anomaly Detection within images(with GAN augmentation)
 
   1. Augment Ok images using HistAuGAN combine the GAN augmented images with Ok images for training
-  ** Use weight 0.1 for GAN images during training. Samples: 
+  ** Use weight 0.1 for GAN images during training. Samples: https://drive.google.com/drive/folders/1-cMRgjqylpox1SWk8xg1MO5i_PD7aRnl?usp=sharing
   3. Install pytorch_lightning==1.9.4
   4. Run Task2.py and specify the path to Ok images in dataset_path and path to store logs in project_path
-  Samples with anomaly map:
+  Samples with anomaly map: https://drive.google.com/drive/folders/1biDmpL5HiqCzcXJ5hIOmNem2TPQKQLiw?usp=sharing
 
 ## Task 3: Define Defects Type and Give a Quantitative Evaluation of the Defect Level
 
