@@ -42,9 +42,11 @@ Clone the repository and unzip all files in the same directory
 
    1. Augment images with HistAuGAN setting Ok images as one type and template as another 
    Experimented with probability of selecting Template image
-   1%:
-   10%:
-   50%:
+   
+   1%: https://drive.google.com/drive/folders/1LhUR-SzNWMPp0viIopxOqoSf7ZXLhoI_?usp=sharing
+   10%: https://drive.google.com/drive/folders/1bpsbeyorbLP2kPe3qjxX0-rup6L08o4S?usp=share_link
+   50%: https://drive.google.com/drive/folders/19FTEdGwOk8gM9fQv1qHOINaIp0qk6DVP?usp=sharing
+   
    2. For content vector from Ok images and its domain use 'generate_hist_augs function to convert them as much as possible to Template image
    3. Combine the GAN augmented images(10% probability of Template and OK augmented images) with Ok images and previously generated images for training and run Task2.py
    Results: https://drive.google.com/drive/folders/1geQyfDzV7H_287PRxbxb4shNSI8dbxcO?usp=sharing
