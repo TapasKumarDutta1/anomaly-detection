@@ -2,22 +2,25 @@
 Clone the repository and unzip all files in the same directory
 
 Task 1: Segmentation of templates from images
-Steps:
+
   1. Create directory segmented to store segmented templates within the images
   2. Extract one template from any image manually and use matchTemplates of Task1.py to extract most similar templates
   extracted samples: https://drive.google.com/drive/folders/13u3WkebVPQaxyiZAzPoTmUjDkSu9Lk1e?usp=sharing
 
 Task 2: Anomaly Detection within images(without GAN augmentation)
-Steps:
+
   1. Install pytorch_lightning==1.9.4
   2. Run Task2.py and specify the path to Ok images in dataset_path and path to store logs in project_path
+  Samples with anomaly map:
 
 
 Task 2: Anomaly Detection within images(with GAN augmentation)
-Steps:
-  1. 
-  1. Install pytorch_lightning==1.9.4
-  2. Run Task2.py and specify the path to Ok images in dataset_path and path to store logs in project_path
+
+  1. Augment Ok images using HistAuGAN combine the GAN augmented images with Ok images for training
+  ** Use weight 0.1 for GAN images during training. Samples: 
+  3. Install pytorch_lightning==1.9.4
+  4. Run Task2.py and specify the path to Ok images in dataset_path and path to store logs in project_path
+  Samples with anomaly map:
 
 
 ## Things i tried that did not work
