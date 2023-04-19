@@ -18,3 +18,13 @@ Steps:
   1. 
   1. Install pytorch_lightning==1.9.4
   2. Run Task2.py and specify the path to Ok images in dataset_path and path to store logs in project_path
+
+
+## Things i tried that did not work
+
+  1. Augmentation of single image using SinGAN(generated images had their structure damaged)
+  2. Blockwise finetunning and Standard finetunning GAN with augmentation model on template augmented data  
+  
+## Things that gave small improvement(needs further experimentation)
+
+  1. Training model with Horizontal/ Vertical/ ColorJitter augmented data and using these for test time augmentation
