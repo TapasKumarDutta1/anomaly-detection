@@ -24,7 +24,6 @@ Clone the repository and unzip all files in the same directory
 
 ## Task 3: Define Defects Type and Give a Quantitative Evaluation of the Defect Level
 
-  Defect Types and quantitative evaluation
   ### 1. Blurry Text:
           Definition: Texts are blurry
           Condition: Anomaly map covers text region
@@ -34,6 +33,16 @@ Clone the repository and unzip all files in the same directory
   ### 3. Color/Scratch Defect:
           Definition: Color of region different from surrounding
           Condition: Anomaly map present within structure 
+  
+  ### Quantitative Evaluation: 
+  
+  Area covered by observable largest defect 
+          
+## Task 4: Anomaly Detection Given a Single Good Template
+
+   1. Augment images with HistAuGAN setting Ok images as one type and template as another 
+   2. For content vector from Ok images and its domain use 'generate_hist_augs function to convert them as much as possible to Template image
+   3. Combine the GAN augmented images with Ok images and previously generated images for training and run Task2.py
           
 ## Things i tried that did not work
 
