@@ -22,7 +22,19 @@ Task 2: Anomaly Detection within images(with GAN augmentation)
   4. Run Task2.py and specify the path to Ok images in dataset_path and path to store logs in project_path
   Samples with anomaly map:
 
+Task 3: Define Defects Type and Give a Quantitative Evaluation of the Defect Level
 
+  Defect Types and quantitative evaluation
+  ### 1. Blurry Text:
+          Definition: Texts are blurry
+          Condition: Anomaly map covers text region
+  ### 2. Structural Defect:
+          Definition: Structures are malformed
+          Condition: Anomaly map covers structure edges
+  ### 3. Color/Scratch Defect:
+          Definition: Color of region different from surrounding
+          Condition: Anomaly map present within structure 
+          
 ## Things i tried that did not work
 
   1. Augmentation of single image using SinGAN(generated images had their structure damaged)
