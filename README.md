@@ -41,13 +41,18 @@ Clone the repository and unzip all files in the same directory
 ## Task 4: Anomaly Detection Given a Single Good Template
 
    1. Augment images with HistAuGAN setting Ok images as one type and template as another 
+   Experimented with probability of selecting Template image
+   1%:
+   10%:
+   50%:
    2. For content vector from Ok images and its domain use 'generate_hist_augs function to convert them as much as possible to Template image
-   3. Combine the GAN augmented images with Ok images and previously generated images for training and run Task2.py
+   3. Combine the GAN augmented images(10% probability of Template and OK augmented images) with Ok images and previously generated images for training and run Task2.py
+   Results: https://drive.google.com/drive/folders/1geQyfDzV7H_287PRxbxb4shNSI8dbxcO?usp=sharing
           
 ## Things i tried that did not work
 
   1. Augmentation of single image using SinGAN(generated images had their structure damaged) Samples: https://drive.google.com/drive/folders/1gnlYlt-ZiLR67LZVC3vMyVinxIsMwI33?usp=sharing
-  2. Blockwise finetunning and Standard finetunning GAN with augmentation model on template augmented data  
+  2. Blockwise finetunning and Standard finetunning GAN with augmentation model on template augmented data 
   
 ## Things that gave small improvement(needs further experimentation)
 
