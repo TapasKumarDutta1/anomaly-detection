@@ -46,7 +46,7 @@ Clone the repository and unzip all files in the same directory
           
 ## Things i tried that did not work
 
-  1. Augmentation of single image using SinGAN(generated images had their structure damaged)
+  1. Augmentation of single image using SinGAN(generated images had their structure damaged) Samples: https://drive.google.com/drive/folders/1gnlYlt-ZiLR67LZVC3vMyVinxIsMwI33?usp=sharing
   2. Blockwise finetunning and Standard finetunning GAN with augmentation model on template augmented data  
   
 ## Things that gave small improvement(needs further experimentation)
