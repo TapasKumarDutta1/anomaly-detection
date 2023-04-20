@@ -14,7 +14,7 @@ from torchvision import transforms
 def get_anomaly_map(path, checkpoint, stage):
 
     if stage == "stage-1-GAN":
-        intensity = 0.001
+        intensity = 0.01
         size = 175
     else:
         intensity = 0.007
