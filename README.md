@@ -44,7 +44,9 @@ Clone the repository and unzip all files in the same directory
    Experimented with probability of selecting Template image
    
    1%: https://drive.google.com/drive/folders/1LhUR-SzNWMPp0viIopxOqoSf7ZXLhoI_?usp=sharing
+   
    10%: https://drive.google.com/drive/folders/1bpsbeyorbLP2kPe3qjxX0-rup6L08o4S?usp=share_link
+   
    50%: https://drive.google.com/drive/folders/19FTEdGwOk8gM9fQv1qHOINaIp0qk6DVP?usp=sharing
    
    2. For content vector from Ok images and its domain use 'generate_hist_augs function to convert them as much as possible to Template image
