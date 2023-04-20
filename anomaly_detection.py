@@ -51,7 +51,7 @@ class MVTecDataset(Dataset):
 
         # self.wts = wts
         if wts=="without-template":
-          self.wts=[1,0.1]
+          self.wts=[8,1]
         else:
           self.wts=[5,1,2]
 
@@ -109,7 +109,7 @@ class STPM(pl.LightningModule):
     def __init__(
         self,
         dataset_path,
-        wts=[0,1],
+        wts="without-template",
         load_size=768,
         lr=0.4,
         momentum=0.9,
