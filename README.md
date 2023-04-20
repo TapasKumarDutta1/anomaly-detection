@@ -1,5 +1,7 @@
 # Anomaly Detection
 Clone the repository and unzip all files in the same directory
+working demo available as https://github.com/TapasKumarDutta1/anomaly-detection/blob/main/Working_Demo_anomaly_detection.ipynb
+Google drive data: https://github.com/TapasKumarDutta1/anomaly-detection/blob/main/Working_Demo_anomaly_detection.ipynb
 
 ## Task 1: Segmentation of templates from images
 
