@@ -38,8 +38,6 @@ Google drive data: https://github.com/TapasKumarDutta1/anomaly-detection/blob/ma
    1. Augment images with HistAuGAN setting Ok images as one type and template as another 
    Experimented with probability of selecting Template image
    
-   1%: https://drive.google.com/drive/folders/1LhUR-SzNWMPp0viIopxOqoSf7ZXLhoI_?usp=sharing
-   
    10%: https://drive.google.com/drive/folders/1bpsbeyorbLP2kPe3qjxX0-rup6L08o4S?usp=share_link
    
    50%: https://drive.google.com/drive/folders/19FTEdGwOk8gM9fQv1qHOINaIp0qk6DVP?usp=sharing
