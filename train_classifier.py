@@ -84,9 +84,9 @@ class MVTecDataset(Dataset):
 
         wt = self.wts[0]
 
-        if "_stage1" in img_path:
+        if "stage1" in img_path:
             wt = self.wts[1]
-        elif "template" in img_path:
+        elif "stage2" in img_path:
             wt = self.wts[2]
 
         # read the image and apply transformations
@@ -195,7 +195,7 @@ class STPM(pl.LightningModule):
 
     def train_dataloader(self):
         image_datasets = MVTecDataset(
-            root=self.dataset_path, transform=self.data_transforms, wts=[5, 1, 1]
+            root=self.dataset_path, transform=self.data_transforms, wts=[5, 1, 2]
         )
 
         train_loader = DataLoader(
