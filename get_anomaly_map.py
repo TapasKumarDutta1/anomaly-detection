@@ -17,7 +17,7 @@ def get_anomaly_map(path, checkpoint, stage):
         intensity = 0.008
         size = 100
     else:
-        intensity = 0.007
+        intensity = 0.002
         size = 300
     model = STPM(path).load_from_checkpoint(checkpoint)
     for img_path in glob.glob(path+"/*"):
@@ -47,7 +47,7 @@ def get_anomaly_map(path, checkpoint, stage):
         contours, hierarchy = cv2.findContours(np.array(thresh, np.uint8), 1, 2)
 
         #for regions above threshold check area covered and if larger than certain threshold apply anomaly map
-        areas = []
+        areas = [0]
         for cnt in contours:
             areas.append(cv2.contourArea(cnt))
 
