@@ -54,7 +54,7 @@ class MVTecDataset(Dataset):
         for i in self.img_paths:
             if "stage1" in i:
                 count["stage1"] += 1
-            if "stage2" in i:
+            elif "stage2" in i:
                 count["stage2"] += 1
             elif "nok" in i:
                 count["nok"] += 1
