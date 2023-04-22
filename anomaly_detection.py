@@ -53,7 +53,7 @@ class MVTecDataset(Dataset):
         if wts=="without-template":
           self.wts=[9,1]
         else:
-          self.wts=[5,1,1]
+          self.wts=[5,1,2]
 
     def __len__(self):
         return len(self.img_paths)
