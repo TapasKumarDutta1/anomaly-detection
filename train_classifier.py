@@ -268,8 +268,7 @@ if __name__ == "__main__":
         lr=args.lr,
         momentum=args.momentum,
         batch_size=int(args.batch_size),
-        weight_decay=args.weight_decay,
-        amap_mode=args.amap_mode,
+        weight_decay=args.weight_decay
     )
     trainer.fit(model)
     save_path = args.project_path
