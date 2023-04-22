@@ -48,12 +48,12 @@ class MVTecDataset(Dataset):
         self.transform = transform
 
         # weights to be assigned to images
-
-        # self.wts = wts
-        if wts=="without-template":
-          self.wts=[9,1]
+        # 9:1 when training not augmented samples and samples augmented not using template image
+        # 5:1:2 when training not augmented samples, samples augmented not using template image, samples trained using template images
+        if wts == "without-template":
+            self.wts = [9, 1]
         else:
-          self.wts=[5,1,2]
+            self.wts = [5, 1, 2]
 
     def __len__(self):
         return len(self.img_paths)
@@ -139,9 +139,11 @@ class STPM(pl.LightningModule):
             self.features_s.append(output)
 
         self.model_t = resnet18(pretrained=True).eval()
-        if self.teacher_weights!=None:
+        if self.teacher_weights != None:
             print("Teacher weights loaded")
-            self.model_t.load_state_dict(torch.load(self.teacher_weights)['model_state_dict'],strict=False)
+            self.model_t.load_state_dict(
+                torch.load(self.teacher_weights)["model_state_dict"], strict=False
+            )
         for param in self.model_t.parameters():
             param.requires_grad = False
 
@@ -219,7 +221,8 @@ class STPM(pl.LightningModule):
                 0.5
                 / (w * h)
                 * torch.sum(
-                    float(wts) * torch.sum(self.criterion(fs_norm, ft_norm), [1, 2, 3]), 0
+                    float(wts) * torch.sum(self.criterion(fs_norm, ft_norm), [1, 2, 3]),
+                    0,
                 )
             )
             tot_loss += f_loss
