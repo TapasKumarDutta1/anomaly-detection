@@ -49,13 +49,13 @@ class MVTecDataset(Dataset):
         # nok represents anomaly images
         # ok represents non-anomaly images
         # count the number of each type of images and print them
-        count = {"_stage1": 0, "_stage2": 0, "ok": 0, "nok": 0}
+        count = {"stage1": 0, "stage2": 0, "ok": 0, "nok": 0}
 
         for i in self.img_paths:
-            if "_stage1" in i:
-                count["_stage1"] += 1
-            if "_stage2" in i:
-                count["_stage2"] += 1
+            if "stage1" in i:
+                count["stage1"] += 1
+            if "stage2" in i:
+                count["stage2"] += 1
             elif "nok" in i:
                 count["nok"] += 1
             else:
