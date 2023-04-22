@@ -51,9 +51,9 @@ class MVTecDataset(Dataset):
 
         # self.wts = wts
         if wts=="without-template":
-          self.wts=[8,1]
+          self.wts=[9,1]
         else:
-          self.wts=[5,1,2]
+          self.wts=[5,1,1]
 
     def __len__(self):
         return len(self.img_paths)
@@ -109,6 +109,7 @@ class STPM(pl.LightningModule):
     def __init__(
         self,
         dataset_path,
+        teacher_weights=None,
         wts="without-template",
         load_size=768,
         lr=0.4,
@@ -120,6 +121,7 @@ class STPM(pl.LightningModule):
         super(STPM, self).__init__()
         self.save_hyperparameters()
         self.amap_mode = amap_mode
+        self.teacher_weights = teacher_weights
         self.load_size = load_size
         self.weight_decay = weight_decay
         self.lr = lr
@@ -137,6 +139,9 @@ class STPM(pl.LightningModule):
             self.features_s.append(output)
 
         self.model_t = resnet18(pretrained=True).eval()
+        if self.teacher_weights!=None:
+            print("Teacher weights loaded")
+            self.model_t.load_state_dict(torch.load(self.teacher_weights)['model_state_dict'],strict=False)
         for param in self.model_t.parameters():
             param.requires_grad = False
 
@@ -292,6 +297,7 @@ class STPM(pl.LightningModule):
 
 def get_args():
     parser = argparse.ArgumentParser(description="ANOMALYDETECTION")
+    parser.add_argument("--teacher_weights", default=None)
     parser.add_argument("--phase", choices=["train", "test"], default="train")
     parser.add_argument("--dataset_path", default=r"D:\Dataset\mvtec_anomaly_detection")
     parser.add_argument("--category", default="template")
@@ -334,6 +340,7 @@ if __name__ == "__main__":
 
     model = STPM(
         dataset_path=args.dataset_path,
+        teacher_weights=args.teacher_weights,
         load_size=args.load_size,
         wts=args.wts,
         lr=args.lr,
