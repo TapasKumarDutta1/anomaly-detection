@@ -33,7 +33,7 @@ Task3: Anomaly Detection Given a Single Good Template
   ![alt text](data/2-2.png)
 
 
-Input|Mask
+No-Template|Template
  --- | ---
 ![alt text](data/scratch_1_1.png) | ![alt text](data/scratch_2_1.png)
 
