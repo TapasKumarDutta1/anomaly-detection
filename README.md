@@ -6,8 +6,18 @@ Task1: Segmentation And Annotation
 
 Task2: Propose An Anomaly Detection Model
 
-Task3: Define Defects Type and Give a Quantitative Evaluation of the Defect Level
+Step1: Generate new samples using OK images using HistAuGAN
+![alt text](data/2-0.png)
 
-Task4: Anomaly Detection Given a Single Good Template
+
+Step2: Fine-Tune teacher model on OK images
+![alt text](data/2-1.png)
+
+
+Step3: Use Teacher model to teach student model
+![alt text](data/2-2.png)
+
+
+Task3: Anomaly Detection Given a Single Good Template
 
 Working colab notebook(Working_Demo_anomaly_detection.ipynb) available for using different files 
