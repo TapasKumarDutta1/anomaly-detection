@@ -14,7 +14,7 @@ Step2: Fine-Tune teacher model on OK images
 ![alt text](data/2-1.png)
 
 
-Step3: Use Teacher model to teach student model
+Step3: Use Teacher model to teach student model by minimising the teacher student extracted features for OK images. Get anomaly map by calculating the similarity between student and teacher extracted features for sample images.
 ![alt text](data/2-2.png)
 
 
