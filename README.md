@@ -2,7 +2,7 @@
 
 Task1: Segmentation And Annotation
 
-![alt text](data/0-0.png)
+![alt text](data/1-1.png)
 
 Task2: Propose An Anomaly Detection Model
 
