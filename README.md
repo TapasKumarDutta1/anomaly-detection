@@ -33,4 +33,8 @@ Task3: Anomaly Detection Given a Single Good Template
   ![alt text](data/2-2.png)
 
 
+Input|Mask
+ --- | ---
+![alt text](scratch_1_1.png) | ![alt text](scratch_2_1.png)
+
 Working colab notebook(Working_Demo_anomaly_detection.ipynb) available for using different files 
