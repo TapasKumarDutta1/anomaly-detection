@@ -34,4 +34,4 @@ No-Template|Template
  --- | ---
 ![alt text](data/scratch_1_1.png) | ![alt text](data/scratch_2_1.png)
 
-Working colab notebook(Working_Demo_anomaly_detection.ipynb) available for using different files 
+[Working colab Notebook](https://github.com/TapasKumarDutta1/anomaly-detection/blob/main/Working_Demo_anomaly_detection.ipynb) available for using different files 
