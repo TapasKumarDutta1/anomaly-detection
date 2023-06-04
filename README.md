@@ -16,7 +16,7 @@
     3. Use Teacher model to teach student model by minimising the teacher student extracted features for OK images. Get anomaly map by        calculating the similarity between student and teacher extracted features for sample images.
     ![alt text](data/2-2.png)
 
-3. Anomaly Detection Given a Single Good Template(
+3. Anomaly Detection Given a Single Good Template
 [Output Anomaly Maps](https://drive.google.com/drive/folders/18FoeMpwZ98pnrnw44jxtWnmPgg3wd6rG?usp=sharing )
     
     1. Generate new samples using OK images and Good Template using HistAuGAN 
