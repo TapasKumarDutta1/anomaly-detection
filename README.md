@@ -1,5 +1,7 @@
 # Anomaly Detection
 
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
 This repository contains code and data for an anomaly detection project, which involves segmentation and annotation, proposing an anomaly detection model, and detecting anomalies given a single good template. The project utilizes various techniques, including HistAuGAN for generating new samples and teacher-student models for feature extraction.
 
 ## Segmentation And Annotation
