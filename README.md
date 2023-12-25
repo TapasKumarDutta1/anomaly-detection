@@ -70,3 +70,9 @@ For any questions or issues related to the project, feel free to open an issue i
   year={2019}
 }
 
+@inproceedings{HistAuGAN,
+  author = {Wagner, S. J., Khalili, N., Sharma, R., Boxberg, M., Marr, C., de Back, W., Peng, T.},
+  booktitle = {Medical Image Computing and Computer Assisted Intervention – MICCAI 2021},
+  title = {Structure-Preserving Multi-Domain Stain Color Augmentation using Style-Transfer with Disentangled Representations},
+  year = {2021}
+}
