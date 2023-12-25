@@ -58,3 +58,15 @@ A [Colab Notebook](https://github.com/TapasKumarDutta1/anomaly-detection/blob/ma
 For any questions or issues related to the project, feel free to open an issue in the repository.
 
 *Note: This readme provides an overview of the project and its processes. Detailed explanations and code implementation can be found in the respective files and notebooks.*
+
+
+## Citation
+
+```markdown
+@inproceedings{rottshaham2019singan,
+  title={SinGAN: Learning a Generative Model from a Single Natural Image},
+  author={Rott Shaham, Tamar and Dekel, Tali and Michaeli, Tomer},
+  booktitle={Computer Vision (ICCV), IEEE International Conference on},
+  year={2019}
+}
+
