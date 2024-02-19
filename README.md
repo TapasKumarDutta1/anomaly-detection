@@ -1,78 +1,24 @@
-# Anomaly Detection
-
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-
-This repository contains code and data for an anomaly detection project, which involves segmentation and annotation, proposing an anomaly detection model, and detecting anomalies given a single good template. The project utilizes various techniques, including HistAuGAN for generating new samples and teacher-student models for feature extraction.
-
-## Segmentation And Annotation
-The first step of the project is segmentation and annotation. An example image from this phase is shown below:
-
-![Segmentation and Annotation](data/1-1.png)
-
-## Propose An Anomaly Detection Model
-
-### 1. Generate New Samples Using HistAuGAN
-HistAuGAN is employed to generate new samples using OK (normal) images. The generated samples can be accessed [here](https://drive.google.com/drive/folders/1VJfZKvlc-h2P9r0uLWA34kFx21atnXcA?usp=sharing). An example of the generated sample is shown below:
-
-![Generated Sample](data/2-0.png)
-
-### 2. Fine-Tune Teacher Model on OK Images
-The teacher model is fine-tuned using OK images. An illustration of this step is depicted below:
-
-![Fine-Tune Teacher Model](data/2-1.png)
-
-### 3. Use Teacher Model to Teach Student Model
-The student model is taught by the teacher model using OK images. This is achieved by minimizing the similarity between teacher and student extracted features for the OK images. Anomaly maps are obtained by calculating the similarity between the student and teacher extracted features for sample images. An example of the anomaly map is shown below:
-
-![Anomaly Map](data/2-2.png)
-
-## Anomaly Detection Given a Single Good Template
-
-### 1. Generate New Samples Using OK Images and Good Template
-Similar to the previous step, new samples are generated using OK images and a good template, utilizing HistAuGAN. The generated samples are available [here](https://drive.google.com/drive/folders/1VJfZKvlc-h2P9r0uLWA34kFx21atnXcA?usp=sharing). An example of the generated sample is shown below:
-
-![Generated Sample with Template](data/3-0.png)
-
-### 2. Fine-Tune Teacher Model on OK Images
-The teacher model is again fine-tuned, this time using OK images and the good template.
-
-![Fine-Tune Teacher Model](data/2-1.png)
-
-### 3. Use Teacher Model to Teach Student Model
-Similar to the previous approach, the teacher model is used to teach the student model by minimizing the similarity between teacher and student extracted features for OK images. Anomaly maps are then obtained for the sample images. An example of the anomaly map is shown below:
-
-![Anomaly Map](data/2-2.png)
-
-## Comparison Between No-Template and Template Anomaly Detection
-
-The repository includes a comparison between no-template and template anomaly detection results. Here are two sample images, one for each case:
-
-| No-Template | Template |
-| --- | --- |
-| ![No-Template](data/scratch_1_1.png) | ![Template](data/scratch_2_1.png) |
-
-## Colab Notebook
-
-A [Colab Notebook](https://github.com/TapasKumarDutta1/anomaly-detection/blob/main/Working_Demo_anomaly_detection.ipynb) is provided for utilizing different files and experimenting with the anomaly detection process.
-
-For any questions or issues related to the project, feel free to open an issue in the repository.
-
-*Note: This readme provides an overview of the project and its processes. Detailed explanations and code implementation can be found in the respective files and notebooks.*
-
-
-## Citation
-
-```markdown
-@inproceedings{rottshaham2019singan,
-  title={SinGAN: Learning a Generative Model from a Single Natural Image},
-  author={Rott Shaham, Tamar and Dekel, Tali and Michaeli, Tomer},
-  booktitle={Computer Vision (ICCV), IEEE International Conference on},
-  year={2019}
-}
-
-@inproceedings{HistAuGAN,
-  author = {Wagner, S. J., Khalili, N., Sharma, R., Boxberg, M., Marr, C., de Back, W., Peng, T.},
-  booktitle = {Medical Image Computing and Computer Assisted Intervention – MICCAI 2021},
-  title = {Structure-Preserving Multi-Domain Stain Color Augmentation using Style-Transfer with Disentangled Representations},
-  year = {2021}
-}
+<h2>LeNet-5</h2>
+<p>The LeNet-5 architecture10 is perhaps the most widely known CNN architecture. As mentioned earlier, it was created by Yann LeCun in 1998 and widely used for handwritten digit recognition (MNIST). It is composed of the layers shown in Table 14-1.</p>
+<p>Footnote 10: “Gradient-Based Learning Applied to Document Recognition”, Y. LeCun, L. Bottou, Y. Bengio and P. Haffner (1998).</p>
+<p><em>Table 14-1. LeNet-5 architecture</em></p>
+<ul>
+<li>MNIST images are (28\times 28) pixels, but they are zero-padded to (32\times 32) pixels and normalized before being fed to the network. The rest of the network does not use any padding, which is why the size keeps shrinking as the image progresses through the network.</li>
+<li>The average pooling layers are slightly more complex than usual: each neuron computes the mean of its inputs, then multiplies the result by a learnable coefficient (one per map) and adds a learnable bias term (again, one per map), then finally applies the activation function.</li>
+<li>Most neurons in C3 maps are connected to neurons in only three or four S2 maps (instead of all six S2 maps). See table 1 (page 8) in the original paper10 for details. Footnote 10: “Gradient-Based Learning Applied to Document Recognition”, Y. LeCun, L. Bottou, Y. Bengio and P. Haffner (1998).</li>
+<li>The output layer is a bit special: instead of computing the matrix multiplication of the inputs and the weight vector, each neuron outputs the square of the Euclidian distance between its input vector and its weight vector. Each output measures how much the image belongs to a particular digit class. The cross entropy cost function is now preferred, as it penalizes bad predictions much more, producing larger gradients and converging faster.</li>
+</ul>
+<p>Yann LeCun's website ("LENET" section) features great demos of LeNet-5 classifying digits.</p>
+<h3>AlexNet</h3>
+<p>The <em>AlexNet</em> CNN architecture11 won the 2012 ImageNet ILSVRC challenge by a large margin: it achieved 17% top-5 error rate while the second best achieved only 26%! It was developed by Alex Krizhevsky (hence the name), Ilya Sutskever, and Geoffrey Hinton. It is quite similar to LeNet-5, only much larger and deeper, and it was the first to stack convolutional layers directly on top of each other, instead of stacking a pooling layer on top of each convolutional layer. Table 14-2 presents this architecture.</p>
+<p>Footnote 11: ImageNet Classification with Deep Convolutional Neural Networks,* A. Krizhevsky et al. (2012).</p>
+<p>To reduce overfitting, the authors used two regularization techniques: first they applied dropout (introduced in Chapter 11) with a 50% dropout rate during training to the outputs of layers F8 and F9. Second, they performed <em>data augmentation</em> by randomly shifting the training images by various offsets, flipping them horizontally, and changing the lighting conditions.</p>
+<h2>Data Augmentation</h2>
+<p>Data augmentation artificially increases the size of the training set by generating many realistic variants of each training instance. This reduces overfitting, making this a regularization technique. The generated instances should be as realistic as possible:</p>
+<p>\begin{table}
+\begin{tabular}{l l l l l l l} \hline \hline layer &amp; Type &amp; Type &amp; Type &amp; Type &amp; Kernel Size &amp; Stride &amp; Reducing &amp; Activation \ \hline Out &amp; Fully Connected &amp; – &amp; 1,000 &amp; – &amp; – &amp; – &amp; Softmax \ F9 &amp; Fully Connected &amp; – &amp; 4,096 &amp; – &amp; – &amp; – &amp; ReLU \ F8 &amp; Fully Connected &amp; – &amp; 4,096 &amp; – &amp; – &amp; – &amp; ReLU \ C7 &amp; Convolution &amp; 256 &amp; (13\times 13) &amp; (3\times 3) &amp; 1 &amp; SAME &amp; ReLU \ G6 &amp; Convolution &amp; 384 &amp; (13\times 13) &amp; (3\times 3) &amp; 1 &amp; SAME &amp; ReLU \ C5 &amp; Convolution &amp; 384 &amp; (13\times 13) &amp; (3\times 3) &amp; 1 &amp; SAME &amp; ReLU \ S4 &amp; Max Pooling &amp; 256 &amp; (13\times 13) &amp; (3\times 3) &amp; 2 &amp; VALID &amp; – \ G3 &amp; Convolution &amp; 256 &amp; (27\times 27) &amp; (5\times 5) &amp; 1 &amp; SAME &amp; ReLU \ S2 &amp; Max Pooling &amp; 96 &amp; (27\times 27) &amp; (3\times 3) &amp; 2 &amp; VALID &amp; – \ C1 &amp; Convolution &amp; 96 &amp; (55\times 55) &amp; (11\times 11) &amp; 4 &amp; VALID &amp; ReLU \ In &amp; Input &amp; 3 (RGB) &amp; (227\times 227) &amp; – &amp; – &amp; – &amp; – \ \hline \hline \end{tabular}
+\end{table}
+Table 14-2. AlexNet architecture ideally, given an image from the augmented training set, a human should not be able to tell whether it was augmented or not. Moreover, simply adding white noise will not help; the modifications should be learnable (white noise is not).</p>
+<p>For example, you can slightly shift, rotate, and resize every picture in the training set by various amounts and add the resulting pictures to the training set (see Figure 14-12). This forces the model to be more tolerant to variations in the position, orientation, and size of the objects in the pictures. If you want the model to be more tolerant to different lighting conditions, you can similarly generate many images with various contrasts. In general, you can also flip the pictures horizontally (except for text, and other non-symmetrical objects). By combining these transformations you can greatly increase the size of your training set.</p>
+<p>AlexNet also uses a competitive normalization step immediately after the ReLU step of layers C1 and C3, called <em>local response normalization</em>. The most strongly activated neurons inhibit other neurons located at the same position in neighboring feature maps (such competitive activation has been observed in biological neurons). This encourages different feature maps to specialize, pushing them apart and forcing them</p>
+<p>Figure 14-12: Generating new training instances from existing ones</p>
